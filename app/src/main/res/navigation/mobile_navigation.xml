@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_note">
+
+    <fragment
+        android:id="@+id/nav_note"
+        android:name="com.example.notes.ui.note.NoteFragment"
+        android:label="@string/menu_notes"
+        tools:layout="@layout/fragment_list_of_notes">
+        <action
+            android:id="@+id/action_nav_note_to_showNoteFragment"
+            app:destination="@id/showNoteFragment" />
+        <action
+            android:id="@+id/action_nav_note_to_editCreateNoteFragment"
+            app:destination="@id/editCreateNoteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/showNoteFragment"
+        android:name="com.example.notes.ui.note.ShowNoteFragment"
+        android:label="@string/show_note"
+        tools:layout="@layout/fragment_show_note">
+        <action
+            android:id="@+id/action_showNoteFragment_to_editCreateNoteFragment"
+            app:destination="@id/editCreateNoteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editCreateNoteFragment"
+        android:name="com.example.notes.ui.note.EditCreateNoteFragment"
+        android:label="@string/edit_create_note"
+        tools:layout="@layout/fragment_edit_create_note">
+        <action
+            android:id="@+id/action_editCreateNoteFragment_to_nav_note"
+            app:destination="@id/nav_note" />
+    </fragment>
+</navigation>
